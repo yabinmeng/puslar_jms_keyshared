@@ -3,7 +3,11 @@ demo_code/gradlew
 demo_code/gradlew.bat
 demo_code/.gradle
 demo_code/.idea
+demo_code/.classpath
+demo_code/.settings
+demo_code/.project
 demo_code/build
 demo_code/gradle
+demo_code/bin
 ansible/hosts.inic
 ansible/hosts.ini
