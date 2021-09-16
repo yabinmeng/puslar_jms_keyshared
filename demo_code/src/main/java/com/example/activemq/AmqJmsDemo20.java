@@ -171,7 +171,7 @@ public class AmqJmsDemo20 extends  AmqJmsDemo {
             // Create a series of destQueue consumer thread to receive messages from
             // the corresponding queue (each queue corresponds to one particular message identifier)
             //
-            LOGGER.info("Create a sires of destination queue consumers to receive messages by their category IDs");
+            LOGGER.info("Create a series of destination queue consumers to receive messages by their category IDs");
             // Create a series of dest queue consumers and corresponding contexts.
             // Each queue corresponds to a specific message category.
             Map<String, JMSContext> destQueueConsumerContexts = new HashMap<>();

@@ -144,7 +144,7 @@ public class PulsarFastJmsDemo20 {
             // Create a series of consumer threads with KEY_SHARED subscription type to receive messages from
             // the corresponding queue (each queue corresponds to one particular message identifier)
             //
-            LOGGER.info("Create a sires of consumers to receive messages by their category IDs (KEY_SHARED)");
+            LOGGER.info("Create a series of consumers to receive messages by their category IDs (KEY_SHARED)");
             Map<String, JMSContext> destConsumerContexts = new HashMap<>();
             Map<String, JMSConsumer> destConsumers = new HashMap<>();
             for (int i = 0; i < DemoUtils.MAX_MSG_CAT_COUNT; i++) {
