@@ -37,7 +37,7 @@
 
 2021-09-15 23:21:29.546 [main] - The bridge simulator (the source topic consumer and the destination queue producer) does the filtering and routing magic ...
 
-2021-09-15 23:21:31.006 [main] - Create a sires of destination queue consumers to receive messages by their category IDs
+2021-09-15 23:21:31.006 [main] - Create a series of destination queue consumers to receive messages by their category IDs
 2021-09-15 23:21:31.670 [main] -    created a consumer: org.apache.activemq.artemis.jms.client.ActiveMQJMSConsumer@2d6aca33
 2021-09-15 23:21:32.109 [main] -    created a consumer: org.apache.activemq.artemis.jms.client.ActiveMQJMSConsumer@5e840abf
 2021-09-15 23:21:32.537 [main] -    created a consumer: org.apache.activemq.artemis.jms.client.ActiveMQJMSConsumer@6ef81f31

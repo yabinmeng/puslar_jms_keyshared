@@ -5,7 +5,7 @@
 
 2021-09-15 22:14:03.080 [main] - Created a producer: com.datastax.oss.pulsar.jms.PulsarJMSProducer@2e51d054
 
-2021-09-15 22:14:03.080 [main] - Create a sires of consumers to receive messages by their category IDs (KEY_SHARED)
+2021-09-15 22:14:03.080 [main] - Create a series of consumers to receive messages by their category IDs (KEY_SHARED)
 2021-09-15 22:14:03.652 [main] -    created a consumer: com.datastax.oss.pulsar.jms.PulsarMessageConsumer$1@397ef2
 2021-09-15 22:14:03.836 [main] -    created a consumer: com.datastax.oss.pulsar.jms.PulsarMessageConsumer$1@7903d448
 2021-09-15 22:14:04.007 [main] -    created a consumer: com.datastax.oss.pulsar.jms.PulsarMessageConsumer$1@78cd163b
