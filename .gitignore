@@ -1,0 +1,8 @@
+/jms_to_pulsar.code-workspace
+demo_code/gradlew
+demo_code/gradlew.bat
+demo_code/.gradle
+demo_code/.idea
+demo_code/build
+demo_code/gradle
+ansible/hosts.ini

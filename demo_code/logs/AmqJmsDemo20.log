@@ -1,0 +1,66 @@
+2021-09-15 23:21:27.469 [main] - Establish connection to ActiveMQ server (tcp://10.101.32.133:61616)
+
+2021-09-15 23:21:28.247 [main] - Created one source topic: AMQ_SRC_TOPIC
+
+2021-09-15 23:21:28.254 [main] - Created one producer to the source topic: org.apache.activemq.artemis.jms.client.ActiveMQJMSProducer@6ac97b84
+
+2021-09-15 23:21:28.255 [main] - Create a topic-to-queue bridge simulator
+2021-09-15 23:21:28.255 [main] -    Create one bridge consumer to the source topic
+2021-09-15 23:21:28.488 [main] -       bridge topic consumer created: org.apache.activemq.artemis.jms.client.ActiveMQJMSConsumer@19593091
+
+2021-09-15 23:21:28.488 [main] -    Create a series of destination queues that the source topic is bridged to
+2021-09-15 23:21:28.543 [main] -       destination queue created: ActiveMQQueue[AMQ_DEST_QUEUE_1]
+2021-09-15 23:21:28.597 [main] -       destination queue created: ActiveMQQueue[AMQ_DEST_QUEUE_2]
+2021-09-15 23:21:28.650 [main] -       destination queue created: ActiveMQQueue[AMQ_DEST_QUEUE_3]
+
+2021-09-15 23:21:28.650 [main] -    Create one bridge producer that filters and routes the messages from the source topic to the destination queues
+2021-09-15 23:21:28.650 [main] -       bridge destination queue producer created: org.apache.activemq.artemis.jms.client.ActiveMQJMSProducer@4e868ef5
+2021-09-15 23:21:28.650 [main] - The topic-to-queue bridge simulator is created
+
+2021-09-15 23:21:28.650 [main] - Publish 15 messages to the source topic (name: AMQ_SRC_TOPIC)
+2021-09-15 23:21:28.664 [main] -    message published: [JMS Property(JMSXGroupID) - cat_3] KM6S4nhTI4YJdg1B1aAq
+2021-09-15 23:21:28.777 [main] -    message published: [JMS Property(JMSXGroupID) - cat_2] 3Wd9kXxviw9DIDdvXz6j
+2021-09-15 23:21:28.829 [main] -    message published: [JMS Property(JMSXGroupID) - cat_2] IYr58tZW5J79XreYoFJj
+2021-09-15 23:21:28.890 [main] -    message published: [JMS Property(JMSXGroupID) - cat_1] NbpwhLNAcyFBKroP515S
+2021-09-15 23:21:28.946 [main] -    message published: [JMS Property(JMSXGroupID) - cat_2] TLR8m3vWUjX61YkhTVfP
+2021-09-15 23:21:29.001 [main] -    message published: [JMS Property(JMSXGroupID) - cat_2] tAh65rWYxijW4Z2hOVrm
+2021-09-15 23:21:29.056 [main] -    message published: [JMS Property(JMSXGroupID) - cat_1] 3Bj0WkCWogqiRtSZ6EBh
+2021-09-15 23:21:29.110 [main] -    message published: [JMS Property(JMSXGroupID) - cat_2] FR8eJutvtA4zHpgJHKf5
+2021-09-15 23:21:29.166 [main] -    message published: [JMS Property(JMSXGroupID) - cat_3] Dy2gHfu8aLKxlfTrm9BP
+2021-09-15 23:21:29.219 [main] -    message published: [JMS Property(JMSXGroupID) - cat_1] lCfXOgX9kynLst7Pf9zF
+2021-09-15 23:21:29.275 [main] -    message published: [JMS Property(JMSXGroupID) - cat_2] izLK9hQgKeLdAQbBADph
+2021-09-15 23:21:29.330 [main] -    message published: [JMS Property(JMSXGroupID) - cat_1] uSv1CYtIGtGwG14uYwsf
+2021-09-15 23:21:29.385 [main] -    message published: [JMS Property(JMSXGroupID) - cat_1] YxUZykaoI5Ie3FbhVMqp
+2021-09-15 23:21:29.440 [main] -    message published: [JMS Property(JMSXGroupID) - cat_2] JVfS1h3tjd1sGiK0xSPe
+2021-09-15 23:21:29.494 [main] -    message published: [JMS Property(JMSXGroupID) - cat_2] UIbYpYs0Lfjd3JhPBKfP
+2021-09-15 23:21:29.546 [main] - Message count: {cat_1=5, cat_2=8, cat_3=2}
+
+2021-09-15 23:21:29.546 [main] - The bridge simulator (the source topic consumer and the destination queue producer) does the filtering and routing magic ...
+
+2021-09-15 23:21:31.006 [main] - Create a sires of destination queue consumers to receive messages by their category IDs
+2021-09-15 23:21:31.670 [main] -    created a consumer: org.apache.activemq.artemis.jms.client.ActiveMQJMSConsumer@2d6aca33
+2021-09-15 23:21:32.109 [main] -    created a consumer: org.apache.activemq.artemis.jms.client.ActiveMQJMSConsumer@5e840abf
+2021-09-15 23:21:32.537 [main] -    created a consumer: org.apache.activemq.artemis.jms.client.ActiveMQJMSConsumer@6ef81f31
+
+2021-09-15 23:21:32.538 [main] - Launch message receiving worker threads to receive messages concurrently
+2021-09-15 23:21:32.539 [pool-2-thread-1] -    starts to receive messages
+2021-09-15 23:21:32.539 [pool-2-thread-3] -    starts to receive messages
+2021-09-15 23:21:32.539 [pool-2-thread-2] -    starts to receive messages
+2021-09-15 23:21:32.553 [pool-2-thread-1] -    message received: [JMS Property(JMXGroupID) - cat_1] NbpwhLNAcyFBKroP515S
+2021-09-15 23:21:32.553 [pool-2-thread-2] -    message received: [JMS Property(JMXGroupID) - cat_2] 3Wd9kXxviw9DIDdvXz6j
+2021-09-15 23:21:32.561 [pool-2-thread-1] -    message received: [JMS Property(JMXGroupID) - cat_1] 3Bj0WkCWogqiRtSZ6EBh
+2021-09-15 23:21:32.561 [pool-2-thread-2] -    message received: [JMS Property(JMXGroupID) - cat_2] IYr58tZW5J79XreYoFJj
+2021-09-15 23:21:32.563 [pool-2-thread-1] -    message received: [JMS Property(JMXGroupID) - cat_1] lCfXOgX9kynLst7Pf9zF
+2021-09-15 23:21:32.563 [pool-2-thread-2] -    message received: [JMS Property(JMXGroupID) - cat_2] TLR8m3vWUjX61YkhTVfP
+2021-09-15 23:21:32.564 [pool-2-thread-2] -    message received: [JMS Property(JMXGroupID) - cat_2] tAh65rWYxijW4Z2hOVrm
+2021-09-15 23:21:32.564 [pool-2-thread-1] -    message received: [JMS Property(JMXGroupID) - cat_1] uSv1CYtIGtGwG14uYwsf
+2021-09-15 23:21:32.565 [pool-2-thread-1] -    message received: [JMS Property(JMXGroupID) - cat_1] YxUZykaoI5Ie3FbhVMqp
+2021-09-15 23:21:32.565 [pool-2-thread-2] -    message received: [JMS Property(JMXGroupID) - cat_2] FR8eJutvtA4zHpgJHKf5
+2021-09-15 23:21:32.567 [pool-2-thread-2] -    message received: [JMS Property(JMXGroupID) - cat_2] izLK9hQgKeLdAQbBADph
+2021-09-15 23:21:32.568 [pool-2-thread-2] -    message received: [JMS Property(JMXGroupID) - cat_2] JVfS1h3tjd1sGiK0xSPe
+2021-09-15 23:21:32.570 [pool-2-thread-2] -    message received: [JMS Property(JMXGroupID) - cat_2] UIbYpYs0Lfjd3JhPBKfP
+2021-09-15 23:21:32.593 [pool-2-thread-3] -    message received: [JMS Property(JMXGroupID) - cat_3] KM6S4nhTI4YJdg1B1aAq
+2021-09-15 23:21:32.594 [pool-2-thread-3] -    message received: [JMS Property(JMXGroupID) - cat_3] Dy2gHfu8aLKxlfTrm9BP
+2021-09-15 23:21:32.595 [pool-2-thread-3] -    finishes receiving messages (total received: {cat_3=2})
+2021-09-15 23:21:32.636 [pool-2-thread-1] -    finishes receiving messages (total received: {cat_1=5})
+2021-09-15 23:21:32.639 [pool-2-thread-2] -    finishes receiving messages (total received: {cat_2=8})

@@ -1,0 +1,17 @@
+- name: Check if docker-compose.yaml file exists
+  stat:
+    path: "/home/{{ ansible_ssh_user }}/{{ tgt_msgsrv_compose_homedir }}/docker-compose.yaml"
+  register: dc_file
+
+- fail:
+    msg: "Can't find docker-compose.yaml file"
+  when: not dc_file.stat.exists
+
+- name: Launch ActiveMQ and Pulsar server containers using docker-compose
+  docker_compose:
+    project_src: "/home/{{ ansible_ssh_user }}/{{ tgt_msgsrv_compose_homedir }}/"
+    state: present
+  register: dc_output
+- debug:     
+    var: dc_output
+  when: show_debug_msg|bool 

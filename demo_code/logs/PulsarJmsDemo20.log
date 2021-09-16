@@ -1,0 +1,52 @@
+2021-09-15 22:14:02.240 [main] - Establish connection to Pulsar server with config: 
+    {webServiceUrl=http://10.101.32.133:8080, producerConfig={batcherBuilder=KEY_BASED, batchingEnabled=true}, authParams=file:///Users/yabinmeng/MyFolder/Yabin.Work/PSA.Vanguard/JMS_to_Pulsar/demo_code/src/main/resources/cluster-admin.jwt, jms.topicSharedSubscriptionType=Key_Shared, authPlugin=org.apache.pulsar.client.impl.auth.AuthenticationToken, brokerServiceUrl=pulsar://10.101.32.133:6650}
+
+2021-09-15 22:14:03.078 [main] - Created a topic: persistent://public/default/jmsdemo
+
+2021-09-15 22:14:03.080 [main] - Created a producer: com.datastax.oss.pulsar.jms.PulsarJMSProducer@2e51d054
+
+2021-09-15 22:14:03.080 [main] - Create a sires of consumers to receive messages by their category IDs (KEY_SHARED)
+2021-09-15 22:14:03.652 [main] -    created a consumer: com.datastax.oss.pulsar.jms.PulsarMessageConsumer$1@397ef2
+2021-09-15 22:14:03.836 [main] -    created a consumer: com.datastax.oss.pulsar.jms.PulsarMessageConsumer$1@7903d448
+2021-09-15 22:14:04.007 [main] -    created a consumer: com.datastax.oss.pulsar.jms.PulsarMessageConsumer$1@78cd163b
+
+2021-09-15 22:14:04.007 [main] - Publish 15 messages to the source topic (name: persistent://public/default/jmsdemo)
+2021-09-15 22:14:04.336 [main] -    message published: [JMS Property(JMSXGroupID) - cat_1] 7JA0nVZWZRZumvnwBtWY
+2021-09-15 22:14:04.392 [main] -    message published: [JMS Property(JMSXGroupID) - cat_2] Otytf1r6PVKu1OFvpYiJ
+2021-09-15 22:14:04.448 [main] -    message published: [JMS Property(JMSXGroupID) - cat_2] kDv4b0lArTPEtqqF3m4K
+2021-09-15 22:14:04.505 [main] -    message published: [JMS Property(JMSXGroupID) - cat_3] B186jmw8NIULaxtepVpL
+2021-09-15 22:14:04.562 [main] -    message published: [JMS Property(JMSXGroupID) - cat_3] 2YZNftpo3bQhW2uvJ6Jv
+2021-09-15 22:14:04.619 [main] -    message published: [JMS Property(JMSXGroupID) - cat_2] LNZ0RkuDX37nOxJYLFIy
+2021-09-15 22:14:04.675 [main] -    message published: [JMS Property(JMSXGroupID) - cat_3] I8tNoFxyiAcgNGAQ2hhE
+2021-09-15 22:14:04.733 [main] -    message published: [JMS Property(JMSXGroupID) - cat_1] CFwt31HqSckcvtqWy5Nh
+2021-09-15 22:14:04.789 [main] -    message published: [JMS Property(JMSXGroupID) - cat_3] uq4HvgEtbfyChqXjPqB9
+2021-09-15 22:14:04.844 [main] -    message published: [JMS Property(JMSXGroupID) - cat_3] kprzQ1ajv1y9JQnEwyeY
+2021-09-15 22:14:04.902 [main] -    message published: [JMS Property(JMSXGroupID) - cat_1] 1DKuQajA03xhs7BLfAu1
+2021-09-15 22:14:04.959 [main] -    message published: [JMS Property(JMSXGroupID) - cat_1] eHIwp26xnn490FQ8L8Jo
+2021-09-15 22:14:05.016 [main] -    message published: [JMS Property(JMSXGroupID) - cat_2] TPwKjrPI5FjB63agfxAh
+2021-09-15 22:14:05.073 [main] -    message published: [JMS Property(JMSXGroupID) - cat_3] py5yYgNRPOLHxzkTsgDi
+2021-09-15 22:14:05.130 [main] -    message published: [JMS Property(JMSXGroupID) - cat_2] lhjDDI0QMGm6AiXxCCd4
+2021-09-15 22:14:05.131 [main] - Message count: {cat_1=4, cat_2=5, cat_3=6}
+
+2021-09-15 22:14:05.131 [main] - Launch consumer message receiving worker threads to receive messages concurrently
+2021-09-15 22:14:05.132 [pool-2-thread-1] -    starts to receive messages
+2021-09-15 22:14:05.132 [pool-2-thread-2] -    starts to receive messages
+2021-09-15 22:14:05.132 [pool-2-thread-3] -    starts to receive messages
+2021-09-15 22:14:05.148 [pool-2-thread-3] -    message received: [Key - cat_1] [JMS Property(JMXGroupID) - cat_1] 7JA0nVZWZRZumvnwBtWY
+2021-09-15 22:14:05.148 [pool-2-thread-1] -    message received: [Key - cat_3] [JMS Property(JMXGroupID) - cat_3] B186jmw8NIULaxtepVpL
+2021-09-15 22:14:05.150 [pool-2-thread-3] -    message received: [Key - cat_2] [JMS Property(JMXGroupID) - cat_2] Otytf1r6PVKu1OFvpYiJ
+2021-09-15 22:14:05.150 [pool-2-thread-1] -    message received: [Key - cat_3] [JMS Property(JMXGroupID) - cat_3] 2YZNftpo3bQhW2uvJ6Jv
+2021-09-15 22:14:05.151 [pool-2-thread-3] -    message received: [Key - cat_2] [JMS Property(JMXGroupID) - cat_2] kDv4b0lArTPEtqqF3m4K
+2021-09-15 22:14:05.151 [pool-2-thread-1] -    message received: [Key - cat_3] [JMS Property(JMXGroupID) - cat_3] I8tNoFxyiAcgNGAQ2hhE
+2021-09-15 22:14:05.153 [pool-2-thread-1] -    message received: [Key - cat_3] [JMS Property(JMXGroupID) - cat_3] uq4HvgEtbfyChqXjPqB9
+2021-09-15 22:14:05.153 [pool-2-thread-3] -    message received: [Key - cat_2] [JMS Property(JMXGroupID) - cat_2] LNZ0RkuDX37nOxJYLFIy
+2021-09-15 22:14:05.154 [pool-2-thread-3] -    message received: [Key - cat_1] [JMS Property(JMXGroupID) - cat_1] CFwt31HqSckcvtqWy5Nh
+2021-09-15 22:14:05.154 [pool-2-thread-1] -    message received: [Key - cat_3] [JMS Property(JMXGroupID) - cat_3] kprzQ1ajv1y9JQnEwyeY
+2021-09-15 22:14:05.155 [pool-2-thread-1] -    message received: [Key - cat_3] [JMS Property(JMXGroupID) - cat_3] py5yYgNRPOLHxzkTsgDi
+2021-09-15 22:14:05.155 [pool-2-thread-3] -    message received: [Key - cat_1] [JMS Property(JMXGroupID) - cat_1] 1DKuQajA03xhs7BLfAu1
+2021-09-15 22:14:05.157 [pool-2-thread-3] -    message received: [Key - cat_1] [JMS Property(JMXGroupID) - cat_1] eHIwp26xnn490FQ8L8Jo
+2021-09-15 22:14:05.158 [pool-2-thread-3] -    message received: [Key - cat_2] [JMS Property(JMXGroupID) - cat_2] TPwKjrPI5FjB63agfxAh
+2021-09-15 22:14:05.159 [pool-2-thread-3] -    message received: [Key - cat_2] [JMS Property(JMXGroupID) - cat_2] lhjDDI0QMGm6AiXxCCd4
+2021-09-15 22:14:05.160 [pool-2-thread-3] -    finishes receiving messages (total received: {cat_1=4, cat_2=5})
+2021-09-15 22:14:05.162 [pool-2-thread-2] -    finishes receiving messages (total received: {})
+2021-09-15 22:14:05.169 [pool-2-thread-1] -    finishes receiving messages (total received: {cat_3=6})

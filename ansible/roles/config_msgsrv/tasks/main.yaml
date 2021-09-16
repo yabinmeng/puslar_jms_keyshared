@@ -1,0 +1,11 @@
+--- 
+- name: Create remote folder to host the docker compose file
+  file: 
+    path: "/home/{{ ansible_ssh_user }}/{{ tgt_msgsrv_compose_homedir }}"
+    state: directory
+    mode: 0755
+
+- name: Upload docker-compose files
+  copy: 
+    src: "../docker/msgsrv/"
+    dest: "/home/{{ ansible_ssh_user }}/{{ tgt_msgsrv_compose_homedir }}"

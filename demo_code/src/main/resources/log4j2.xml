@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="trace" packages="org.apache.pulsar.log4j2.appender">
+    <Properties>
+        <Property name="LOG_DIR">logs/</Property>
+        <Property name="DEFAULT_PATTERN">[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} %c %M - %msg%n</Property>
+        <Property name="MSGONLY_PATTERN">%msg%n</Property>
+        <Property name="SHORT_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] - %msg%n</Property>
+    </Properties>
+    <Appenders>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+            <PatternLayout pattern="${DEFAULT_PATTERN}"/>
+        </Console>
+        <RollingFile
+                name="RollingFileAppender_AmqJmsDemo11"
+                fileName="${LOG_DIR}/AmqJmsDemo11.log"
+                filePattern="${LOG_DIR}/AmqJmsDemo11.%i.log.gz"
+                ignoreExceptions="false">
+            <PatternLayout>
+                <Pattern>${MSGONLY_PATTERN}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="5" />
+        </RollingFile>
+        <RollingFile
+                name="RollingFileAppender_AmqJmsDemo20"
+                fileName="${LOG_DIR}/AmqJmsDemo20.log"
+                filePattern="${LOG_DIR}/AmqJmsDemo20.%i.log.gz"
+                ignoreExceptions="false">
+            <PatternLayout>
+                <Pattern>${SHORT_PATTERN}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="5" />
+        </RollingFile>
+        <RollingFile
+                name="RollingFileAppender_PulsarJmsDemo20"
+                fileName="${LOG_DIR}/PulsarJmsDemo20.log"
+                filePattern="${LOG_DIR}/PulsarJmsDemo20.%i.log.gz"
+                ignoreExceptions="false">
+            <PatternLayout>
+                <Pattern>${SHORT_PATTERN}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="5" />
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.example.activemq.AmqJmsDemo11" level="info" additivity="false">
+            <AppenderRef ref="RollingFileAppender_AmqJmsDemo11"/>
+        </Logger>
+        <Logger name="com.example.activemq.AmqJmsDemo20" level="info" additivity="false">
+            <AppenderRef ref="RollingFileAppender_AmqJmsDemo20"/>
+        </Logger>
+        <Logger name="com.example.pulsar_fastjms.PulsarFastJmsDemo20" level="info" additivity="false">
+            <AppenderRef ref="RollingFileAppender_PulsarJmsDemo20"/>
+        </Logger>
+        <Root level="info">
+            <AppenderRef ref="ConsoleAppender"/>
+        </Root>
+    </Loggers>
+</Configuration>

@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    implementation group: 'org.apache.activemq', name: 'artemis-jms-client-all', version: '2.16.0'
+
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.14.1'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.14.1'
+
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.32'
+
+    implementation group: 'com.datastax.oss', name: 'pulsar-jms', version: '1.2.2'
+}
+
+test {
+    useJUnitPlatform()
+}

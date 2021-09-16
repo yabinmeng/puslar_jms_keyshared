@@ -1,0 +1,7 @@
+show_debug_msg: true
+
+python_verion: 3.9.0
+
+url_docker_debian_pkg: https://download.docker.com/linux/ubuntu
+
+tgt_msgsrv_compose_homedir: msgsrv_dockcomp

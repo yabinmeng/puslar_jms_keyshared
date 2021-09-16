@@ -1,0 +1,11 @@
+---
+- hosts: msg_srv
+  gather_facts: true
+  any_errors_fatal: true
+  become: true
+  become_method: sudo
+  collections:
+    # for docker and docker-compose
+    - community.general
+  roles:
+    - { role: stop_svc_msgsrv }

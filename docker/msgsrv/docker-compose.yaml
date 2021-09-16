@@ -1,0 +1,24 @@
+version: "3.3"
+
+services:
+  activemq-artemis:
+    container_name: activemq-artemis
+    image: "vromero/activemq-artemis"
+    environment: 
+      ARTEMIS_USERNAME: admin
+      ARTEMIS_PASSWORD: myadmin123!
+    ports:
+      - "8161:8161"
+      - "61616:61616"
+    
+  pulsar:
+    container_name: pulsar
+    image: "datastax/pulsar:2.8.0_1.0.0"
+    user: "pulsar:pulsar"
+    ports:
+      - "6650:6650"
+      - "8080:8080"
+    command: bin/pulsar standalone
+    volumes: 
+      - ./pulsar/conf:/pulsar/conf
+      - ./pulsar/security:/pulsar/security

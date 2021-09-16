@@ -1,0 +1,21 @@
+---
+# - hosts: msg_srv
+#   gather_facts: false
+#   any_errors_fatal: true
+#   vars:
+#     python_verion: 3.9.0
+#   roles:
+#     - { role: inst_python3 }
+
+- hosts: msg_srv
+  gather_facts: true
+  any_errors_fatal: true
+  become: true
+  become_method: sudo
+  collections:
+    # for docker and docker-compose
+    - community.general
+  roles:
+    # - { role: docker_runtime }
+    - { role: config_msgsrv }
+    - { role: start_svc_msgsrv }

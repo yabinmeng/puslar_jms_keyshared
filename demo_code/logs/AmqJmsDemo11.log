@@ -1,0 +1,33 @@
+
+
+Publish 10 messages to the source topic (name: AMQ_SRC_TOPIC) ...
+
+ >>> [main] [source topic producer] (Topic: AMQ_SRC_TOPIC); Message sent: [JMSXGroupID - cat_3] Dzjy2PTjEMvkDzdjI73m
+ >>> [main] [source topic producer] (Topic: AMQ_SRC_TOPIC); Message sent: [JMSXGroupID - cat_3] erns1SrN9MqEuXemnnDv
+ >>> [main] [source topic producer] (Topic: AMQ_SRC_TOPIC); Message sent: [JMSXGroupID - cat_3] DNFpVXb3tfXZMO770FYL
+ >>> [main] [source topic producer] (Topic: AMQ_SRC_TOPIC); Message sent: [JMSXGroupID - cat_2] I9Vd3AuH83cUFrJqqTMW
+ >>> [main] [source topic producer] (Topic: AMQ_SRC_TOPIC); Message sent: [JMSXGroupID - cat_2] YmohXnpzYvuQn5Koe48N
+ >>> [main] [source topic producer] (Topic: AMQ_SRC_TOPIC); Message sent: [JMSXGroupID - cat_2] HoUPZk5xf3nswTDP0usQ
+ >>> [main] [source topic producer] (Topic: AMQ_SRC_TOPIC); Message sent: [JMSXGroupID - cat_3] 08sDng2WGn8OdhB5z2on
+ >>> [main] [source topic producer] (Topic: AMQ_SRC_TOPIC); Message sent: [JMSXGroupID - cat_3] VH1GafB0Kk2hqcpEwZPt
+ >>> [main] [source topic producer] (Topic: AMQ_SRC_TOPIC); Message sent: [JMSXGroupID - cat_1] gKkfhAoHA0BNUVXtrfXl
+ >>> [main] [source topic producer] (Topic: AMQ_SRC_TOPIC); Message sent: [JMSXGroupID - cat_1] GSweuXRerxu4LTB0rrmM
+
+
+Launch "destQueue" consumer threads to receive messages per message category ...
+
+ <<< [pool-2-thread-2] [dest queue consumer] (Queue: AMQ_DEST_QUEUE_2); Message received: [JMSXGroupID - cat_2] I9Vd3AuH83cUFrJqqTMW
+ <<< [pool-2-thread-3] [dest queue consumer] (Queue: AMQ_DEST_QUEUE_3); Message received: [JMSXGroupID - cat_3] Dzjy2PTjEMvkDzdjI73m
+ <<< [pool-2-thread-1] [dest queue consumer] (Queue: AMQ_DEST_QUEUE_1); Message received: [JMSXGroupID - cat_1] gKkfhAoHA0BNUVXtrfXl
+ <<< [pool-2-thread-3] [dest queue consumer] (Queue: AMQ_DEST_QUEUE_3); Message received: [JMSXGroupID - cat_3] erns1SrN9MqEuXemnnDv
+ <<< [pool-2-thread-1] [dest queue consumer] (Queue: AMQ_DEST_QUEUE_1); Message received: [JMSXGroupID - cat_1] GSweuXRerxu4LTB0rrmM
+ <<< [pool-2-thread-2] [dest queue consumer] (Queue: AMQ_DEST_QUEUE_2); Message received: [JMSXGroupID - cat_2] YmohXnpzYvuQn5Koe48N
+ <<< [pool-2-thread-3] [dest queue consumer] (Queue: AMQ_DEST_QUEUE_3); Message received: [JMSXGroupID - cat_3] DNFpVXb3tfXZMO770FYL
+ <<< [pool-2-thread-2] [dest queue consumer] (Queue: AMQ_DEST_QUEUE_2); Message received: [JMSXGroupID - cat_2] HoUPZk5xf3nswTDP0usQ
+ <<< [pool-2-thread-3] [dest queue consumer] (Queue: AMQ_DEST_QUEUE_3); Message received: [JMSXGroupID - cat_3] 08sDng2WGn8OdhB5z2on
+ <<< [pool-2-thread-3] [dest queue consumer] (Queue: AMQ_DEST_QUEUE_3); Message received: [JMSXGroupID - cat_3] VH1GafB0Kk2hqcpEwZPt
+
+
+Clean up JMS resources ...
+
+

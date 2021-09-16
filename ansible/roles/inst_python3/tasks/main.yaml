@@ -1,0 +1,86 @@
+- name: check if .pyenv folder exists
+  stat:
+    path: "/home/{{ ansible_ssh_user }}/.pyenv"
+  register: pyenv_folder
+
+- name: install libraries required for "pyenv"
+  become: true
+  become_method: sudo
+  apt:
+    name: "{{ item }}"
+    update_cache: true
+  with_items:
+    - make 
+    - build-essential 
+    - libssl-dev 
+    - zlib1g-dev 
+    - libbz2-dev 
+    - libreadline-dev 
+    - libsqlite3-dev 
+    - libffi-dev
+    - wget 
+    - curl 
+    - llvm 
+    - libncurses5-dev 
+  # when: not (pyenv_folder.stat.isdir is defined and pyenv_folder.stat.isdir)
+
+- debug: msg="{{ pyenv_folder }}"
+  when: show_debug_msg|bool 
+
+- name: install "pyenv" using "pyenv-installer"
+  shell:
+    curl https://pyenv.run | bash
+  args:
+    warn: no
+  when: not (pyenv_folder.stat.isdir is defined and pyenv_folder.stat.isdir)
+
+- name: add pyenv configuration in .bashrc file
+  blockinfile:
+    insertafter: EOF
+    path: /home/{{ ansible_ssh_user }}/.bashrc
+    block: |
+      export PATH="~/.pyenv/bin:$PATH"
+      eval "$(pyenv init -)"
+      eval "$(pyenv virtualenv-init -)"
+
+- name: Make effective of pyenv configuration change in .bashrc file 
+  shell: |
+    source /home/{{ ansible_ssh_user }}/.bashrc
+  args:
+     executable: /bin/bash
+
+- name: Check if pyenv has already installed  version {{ python_verion }}
+  ignore_errors: True
+  shell: |
+    ./bin/pyenv version
+  args:
+     executable: /bin/bash
+     chdir: /home/{{ ansible_ssh_user }}/.pyenv
+  register: pyenv_ver_cmd
+
+- debug: msg="{{ pyenv_ver_cmd }}"
+  when: show_debug_msg|bool 
+
+- name: Install Python {{ python_verion }} using pyenv 
+  shell: |
+    ./bin/pyenv install {{ python_verion }}
+  args:
+     executable: /bin/bash
+     chdir: /home/{{ ansible_ssh_user }}/.pyenv
+  when: pyenv_ver_cmd.stdout == "" or python_verion not in pyenv_ver_cmd.stdout
+
+- name: Set Python {{ python_verion }} as the default version
+  shell: |
+    ./bin/pyenv global {{ python_verion }}
+  args:
+     executable: /bin/bash
+     chdir: /home/{{ ansible_ssh_user }}/.pyenv
+  when: pyenv_ver_cmd.stdout == "" or python_verion not in pyenv_ver_cmd.stdout
+
+- name: Install dependency python packages
+  vars:
+    ansible_python_interpreter: /home/{{ ansible_ssh_user }}/.pyenv/shims/python
+  pip: 
+    name: "{{ item }}"
+  with_items:
+    - PyYaml
