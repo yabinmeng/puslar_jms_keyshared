@@ -1,5 +1,5 @@
 2021-09-15 22:14:02.240 [main] - Establish connection to Pulsar server with config: 
-    {webServiceUrl=http://10.101.32.133:8080, producerConfig={batcherBuilder=KEY_BASED, batchingEnabled=true}, authParams=file:///Users/yabinmeng/MyFolder/Yabin.Work/PSA.Vanguard/JMS_to_Pulsar/demo_code/src/main/resources/cluster-admin.jwt, jms.topicSharedSubscriptionType=Key_Shared, authPlugin=org.apache.pulsar.client.impl.auth.AuthenticationToken, brokerServiceUrl=pulsar://10.101.32.133:6650}
+    {webServiceUrl=http://xxx.xxx.xxx.xxx:8080, producerConfig={batcherBuilder=KEY_BASED, batchingEnabled=true}, authParams=file:///path/to/cluster-admin.jwt, jms.topicSharedSubscriptionType=Key_Shared, authPlugin=org.apache.pulsar.client.impl.auth.AuthenticationToken, brokerServiceUrl=pulsar://xxx.xxx.xxx.xxx:6650}
 
 2021-09-15 22:14:03.078 [main] - Created a topic: persistent://public/default/jmsdemo
 

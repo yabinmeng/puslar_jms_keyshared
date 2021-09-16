@@ -6,3 +6,4 @@ demo_code/.idea
 demo_code/build
 demo_code/gradle
 ansible/hosts.inic
+ansible/hosts.ini

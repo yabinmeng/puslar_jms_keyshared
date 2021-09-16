@@ -1,4 +1,4 @@
-2021-09-15 23:21:27.469 [main] - Establish connection to ActiveMQ server (tcp://10.101.32.133:61616)
+2021-09-15 23:21:27.469 [main] - Establish connection to ActiveMQ server (tcp://xxx.xxx.xxx.xxx:61616)
 
 2021-09-15 23:21:28.247 [main] - Created one source topic: AMQ_SRC_TOPIC
 
