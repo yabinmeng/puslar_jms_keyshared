@@ -15,8 +15,6 @@ The "Topic-to-Queue" with filtering/routing capability can be achieved using a J
 
 The message processing semantics as expressed in the previous JMS pattern is exactly the same as Apache Pulsar's [**Key_Shared**](https://pulsar.apache.org/docs/en/concepts-messaging/#key_shared) subscription type.
 
-![puslar_key_shared](demo_code/src/main/resources/diagrams/pulsar_key_shared.png)
-
 # 2. Use DataStax FastJMS for Pulsar API  to Achieve the Same JMS Pattern Semantics
 
 Using [DataStax FastJMS for Pulsar API (DS FastJMS API)](https://github.com/datastax/pulsar-jms), we can achieve exactly the same message processing semantics using existing JMS applications against a Apache Pulsar server (instead of a native JMS provider server like ActiveMQ) with a minimum amount of code change. The adjusted pattern diagram looks like below:
