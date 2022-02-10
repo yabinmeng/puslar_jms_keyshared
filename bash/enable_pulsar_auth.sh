@@ -1,8 +1,8 @@
 #! /bin/bash
 
-LOCAL_PULSAR_HOME=/Users/yabinmeng/DataStax/pulsar_bin/apache-pulsar-2.8.0
+LOCAL_PULSAR_HOME=/path/to/apache-pulsar-2.8.0
 
-PROJECT_HOME=/Users/yabinmeng/MyFolder/Yabin.Work/PSA.Vanguard/JMS_to_Pulsar
+PROJECT_HOME=/path/to/JMS_to_Pulsar
 LOCAL_TARGET_CONFILE_HOME=$PROJECT_HOME/docker/msgsrv/pulsar/conf
 LOCAL_TARGET_SECFILE_HOME=$PROJECT_HOME/docker/msgsrv/pulsar/security
 
