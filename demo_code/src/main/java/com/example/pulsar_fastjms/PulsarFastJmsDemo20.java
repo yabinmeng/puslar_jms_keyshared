@@ -24,7 +24,7 @@ public class PulsarFastJmsDemo20 {
     static final String PULSAR_WEB_SVC_URL = "http://" + DemoUtils.TEST_SRV_IP + ":8080";
     static final String PULSAR_BROKER_SVC_RUL = "pulsar://" + DemoUtils.TEST_SRV_IP + ":6650";
 
-    static final String TOKEN_FILE = "/Users/yabinmeng/MyFolder/Yabin.Work/PSA.Vanguard/JMS_to_Pulsar/demo_code/src/main/resources/cluster-admin.jwt";
+    static final String TOKEN_FILE = "/path/to/cluster-admin.jwt";
 
     static final String SRC_TOPIC_NAME = "persistent://public/default/jmsdemo";
 
